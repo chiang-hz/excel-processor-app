@@ -226,9 +226,9 @@ if submit_button:
             if pdf_bytes:
                 st.success("PDF 產生成功！")
                 file_name = f"{os.path.splitext(uploaded_file.name)[0]}_converted.pdf"
-                st.download_button(
+               st.download_button(
                     label="📥 下載 PDF",
-                    data=pdf_bytes,
+                    data=bytes(pdf_bytes), # <--- 關鍵修正！ 將 bytearray 轉換為 bytes
                     file_name=file_name,
                     mime="application/pdf"
                 )
