@@ -135,7 +135,7 @@ def process_excel_to_pdf_cross_platform(uploaded_file, options: dict) -> bytes:
                 pdf.set_y(max_y)
 
         pdf.alias_nb_pages()
-        return pdf.output(dest='S').encode('latin-1')
+        return pdf.output()
     except Exception as e:
         st.error(f"PDF 轉換失敗: {e}")
         return None
