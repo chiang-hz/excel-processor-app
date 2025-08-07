@@ -99,7 +99,7 @@ def process_excel_to_pdf_cross_platform(uploaded_file, options: dict) -> bytes:
         pdf.set_font('NotoSans', '', 10)
 
         pdf.set_top_margin(options['上邊距'] * 10)
-        pdf.set_bottom_margin(options['下邊距'] * 10)
+        pdf.b_margin = options['下邊距'] * 10
         pdf.set_left_margin(options['左邊距'] * 10)
         pdf.set_right_margin(options['右邊距'] * 10)
 
